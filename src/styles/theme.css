@@ -1,0 +1,117 @@
+/* this page is temporary will move styles to components ASAP */
+
+
+/* New Event Component  */
+.newEvent {
+    padding: 64px;
+    border: 1px solid lightslategrey;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: fixed;
+    left: 64px;
+}
+
+input, select {
+    height: 56px;
+    width: 400px;
+    /* padding: 0px 16px; */
+    margin-bottom: 16px;
+}
+
+button {
+    height: 56px;
+    width: 400px;
+    background: teal;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Header Component  */
+.header {
+    width: 100%;
+    height: 64px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background: white;
+    z-index: 10;
+    background: black;
+}
+
+.logo {
+    margin-left: 64px;
+    color: white;
+}
+
+.navLinks {
+    margin-right: 64px;
+}
+
+.navLink {
+    margin: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.navLink:hover {
+    color: lightblue;
+}
+
+/* Event Components */
+
+.eventItem {
+    border: 1px solid lightgrey;
+    padding: 16px;
+    min-width: 320px;
+    margin-bottom: 16px;
+}
+
+.eventList {
+    border: 1px solid lightslategrey;
+    padding: 64px;
+    margin-left: 50%;
+}
+
+.categoryPill {
+    padding: 4px 16px;
+    border-radius: 100px;
+    background: lightgrey;
+    width: auto;
+}
+
+/* Profile Components */
+.profileContainer {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login/Signup Components */
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.textButton {
+    margin-top: 24px;
+    color: teal;
+}
+
+
+/* Page Layout */
+
+.layout {
+    display: flex;
+    padding: 120px;
+    justify-content: center;
+    position: relative;
+}
+
+p {
+    margin: 0px;
+}

@@ -1,10 +1,13 @@
 import React from 'react';
+import '../styles/theme.css';
  
 const Profile = () => {
     return (
-       <div>
-          <h1>Profile</h1>
-          <p>User information and events</p>
+       <div className="layout">
+          <div className="profileContainer">
+            <h1>Welcome to your profile!</h1>
+            <button>Log out</button>
+          </div>
        </div>
     );
 }
