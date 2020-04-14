@@ -1,7 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import theme from '../styles/theme';
 
+const MainContainer = styled.div`
+    min-height: 100vh;
+    min-width: 100px;
+    background: ${theme.neutrals.extraDark};
+`
 const Layout = styled.div`
    display: flex;
    padding: 120px;
@@ -47,17 +53,19 @@ const TextButton = styled(NavLink)`
  
 const Signup = () => {
     return (
-       <Layout>
-          <SignupContainer>
-            <h1>Create your Listium account 😁</h1>
-            <InputWrapper placeholder="First Name" type="text" />
-            <InputWrapper placeholder="Last Name" type="text" />
-            <InputWrapper placeholder="Email" type="email" />
-            <InputWrapper placeholder="Password" type="password" />
-            <ButtonWrapper>Create Your Account</ButtonWrapper>
-            <TextButton to='/login'>Already have an account?</TextButton>
-          </SignupContainer>
-       </Layout>
+       <MainContainer>
+         <Layout>
+            <SignupContainer>
+               <h1>Create your Listium account 😁</h1>
+               <InputWrapper placeholder="First Name" type="text" />
+               <InputWrapper placeholder="Last Name" type="text" />
+               <InputWrapper placeholder="Email" type="email" />
+               <InputWrapper placeholder="Password" type="password" />
+               <ButtonWrapper>Create Your Account</ButtonWrapper>
+               <TextButton to='/login'>Already have an account?</TextButton>
+            </SignupContainer>
+         </Layout>
+       </MainContainer>
     );
 }
  

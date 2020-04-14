@@ -1,7 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import theme from '../styles/theme';
 
+const MainContainer = styled.div`
+    min-height: 100vh;
+    min-width: 100px;
+    background: ${theme.neutrals.extraDark};
+`
 const Layout = styled.div`
     display: flex;
     padding: 120px;
@@ -47,15 +53,17 @@ const TextButton = styled(NavLink)`
 
 const Login = () => {
     return (
-       <Layout>
-          <LoginContainer>
-            <h1>Welcome back 👋</h1>
-            <InputWrapper placeholder="Email" type="email"/>
-            <InputWrapper placeholder="Password" type="password"/>
-            <ButtonWrapper>Login</ButtonWrapper>
-            <TextButton to='/signup'>Don't have an account?</TextButton>
-          </LoginContainer>
-       </Layout>
+      <MainContainer>
+        <Layout>
+            <LoginContainer>
+              <h1>Welcome back 👋</h1>
+              <InputWrapper placeholder="Email" type="email"/>
+              <InputWrapper placeholder="Password" type="password"/>
+              <ButtonWrapper>Login</ButtonWrapper>
+              <TextButton to='/signup'>Don't have an account?</TextButton>
+            </LoginContainer>
+        </Layout>
+      </MainContainer>
     );
 }
  

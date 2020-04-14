@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
+import theme from '../styles/theme';
 
+const MainContainer = styled.div`
+    min-height: 100vh;
+    min-width: 100px;
+    background: ${theme.neutrals.extraDark};
+`
 const Layout = styled.div`
    display: flex;
    padding: 120px;
@@ -29,12 +35,14 @@ const ButtonWrapper = styled.button`
  
 const Profile = () => {
     return (
-       <Layout>
-          <ProfileContainer>
-            <h1>Welcome to your profile!</h1>
-            <ButtonWrapper>Log out</ButtonWrapper>
-          </ProfileContainer>
-       </Layout>
+       <MainContainer>
+         <Layout>
+            <ProfileContainer>
+               <h1>Welcome to your profile!</h1>
+               <ButtonWrapper>Log out</ButtonWrapper>
+            </ProfileContainer>
+         </Layout>
+       </MainContainer>
     );
 }
  
