@@ -1,10 +1,16 @@
 import React from 'react';
 import EventList from '../components/EventList';
-import Header from '../components/Header';
 import NewEvent from '../components/NewEvent';
+import styled from 'styled-components';
 
-import '../styles/theme.css';
- 
+const Layout = styled.div`
+    display: flex;
+    padding: 120px;
+    justify-content: center;
+    position: relative;
+`
+
+// This is our static data model for now...
 let events = [
     {
         id: 1,
@@ -52,10 +58,10 @@ let events = [
 
 const home = () => {
     return (
-       <div className="layout">
+       <Layout>
            <NewEvent />
            <EventList events={events} />
-       </div>
+       </Layout>
     );
 }
  
