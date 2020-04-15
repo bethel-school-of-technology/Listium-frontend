@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from '../src/styles/theme'
+import { WavesPattern, LinesPattern } from '../src/components/branding/index';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -22,6 +23,8 @@ class App extends Component {
              <Route path="/profile" component={Profile}/>
             <Route component={Error}/>
            </Switch>
+           <LinesPattern />
+           <WavesPattern />
         </div> 
       </BrowserRouter>
     );

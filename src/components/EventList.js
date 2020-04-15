@@ -2,23 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import EventItem from './EventItem';
 import theme from '../styles/theme';
-import { H2 } from './Fonts';
+import { H1 } from './Fonts';
 
 
 const EventListWrapper = styled.div`
-    margin-left: 50%;
+    margin-right: 4%;
     width: 50%;
     min-width: 320px;
     max-width: 640px;
+    z-index: 5;
+    margin-bottom: 160px;
 `
-const StyledH2 = styled(H2)`
+const StyledH1 = styled(H1)`
     color: white;
     margin-bottom: 32px;
 `
 
 const EventList = (props) => (
     <EventListWrapper>
-        <StyledH2>Your Important Dates</StyledH2>
+        <StyledH1>Upcoming Dates</StyledH1>
         {props.events.map(event => (
             <EventItem 
                 id={event.id}

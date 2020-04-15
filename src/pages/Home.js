@@ -12,7 +12,7 @@ const MainContainer = styled.div`
 const Layout = styled.div`
     display: flex;
     padding: 120px;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
 `
 
@@ -20,8 +20,8 @@ const Layout = styled.div`
 let events = [
     {
         id: 1,
-        eventName: "Sarah's Birthday",
-        eventCategory: "Birthday",
+        eventName: "The day we got our first dog!",
+        eventCategory: "Special Day",
         eventDate: "April 13"
     },
     {

@@ -1,54 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../styles/theme';
-
+import { ListiumLogo } from '../components/branding/index';
  
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
  
 const HeaderWrapper = styled.div`
    width: 100%;
-   height: 64px;
-   border-bottom: 1px solid lightgrey;
+   height: 72px;
    display: flex;
    justify-content: space-between;
    align-items: center;
    position: fixed;
-   background: white;
+   background: rgb(37,36,70,.95);
+   border-bottom: 1px solid rgb(0,0,0,.3);
+   backdrop-filter: blur(10px);
    z-index: 10;
-   background: black;
 `
-
 const LogoWrapper = styled.div`
    margin-left: 64px;
    color: white;
 `
-
 const NavLinksContainer = styled.div`
+
    margin-right: 64px;
 `
-
-const NavLinkWrapper = styled(NavLink)`
+const activeClassName = 'nav-item-active'
+const NavLinkWrapper = styled(NavLink).attrs({ activeClassName })`
    padding: 8px 16px;
-   color: rgb(255,255,255,.7);
+   font-size: 18px;
+   font-weight: 500;
+   color: ${theme.overlays.light._400};
    text-decoration: none;
-   background: black;
+   background: rgb(37,36,70,.0);
    border-radius: 100px;
    transition: all .3s;
 
    &:hover {
-      background: rgb(255,255,255, .1);
-      color: rgb(255,255,255);
+      background: ${theme.neutrals.dark};
+      color: white;
    }
-`
+
+   &.${activeClassName} {
+      color: ${theme.colors.accent1};
+    }
+
+`;
 
 const Header = () => {
     return (
        <HeaderWrapper>
           <LogoWrapper>
-            <h3>Listium</h3>
+            <ListiumLogo />
           </LogoWrapper>
           <NavLinksContainer>
-            <NavLinkWrapper to="/">Home</NavLinkWrapper>
+            <NavLinkWrapper exact to="/">Home</NavLinkWrapper>
             <NavLinkWrapper to="/login">Login</NavLinkWrapper>
             <NavLinkWrapper to="/signup">Signup</NavLinkWrapper>
             <NavLinkWrapper to="/profile">Profile</NavLinkWrapper>
