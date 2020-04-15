@@ -21,7 +21,7 @@ class App extends Component {
              <Route path="/login" component={Login}/>
              <Route path="/signup" component={Signup}/>
              <Route path="/profile" component={Profile}/>
-            <Route component={Error}/>
+            {/* <Route component={Error}/> */}
            </Switch>
            <LinesPattern />
            <WavesPattern />
