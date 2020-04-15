@@ -48,7 +48,6 @@ const SpecialIcon = styled(CalendarStar)`
     margin-right: 32px;
     background: ${theme.colors.accent1};
 `
-
 const TextWrapper = styled.div`
     
 `
@@ -57,7 +56,6 @@ const TextWrapper = styled.div`
 const EventItem = (props) => {
     
     function GetCategory(props) {
-        console.log(props.category)
         if (props.category === "Birthday") {
             return <BirthdayIcon />
         } else if (props.category === "Anniversary") {
