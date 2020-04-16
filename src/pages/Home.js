@@ -4,6 +4,7 @@ import NewEvent from '../components/NewEvent';
 import styled from 'styled-components';
 import theme from '../styles/theme';
 
+
 const MainContainer = styled.div`
     min-height: 100vh;
     min-width: 100px;
@@ -17,6 +18,7 @@ const Layout = styled.div`
 `
 
 // This is our static data model for now...
+<<<<<<< Updated upstream
 let events = [
     {
         id: 1,
@@ -61,14 +63,23 @@ let events = [
         eventDate: "May 7"
     }
 ]
+=======
+>>>>>>> Stashed changes
 
 const home = () => {
     return (
     <MainContainer>
+<<<<<<< Updated upstream
        <Layout>
            <NewEvent />
            <EventList events={events} />
        </Layout>
+=======
+      <Layout>
+        <NewEvent />
+        <EventList />
+      </Layout>
+>>>>>>> Stashed changes
     </MainContainer>
     );
 }
