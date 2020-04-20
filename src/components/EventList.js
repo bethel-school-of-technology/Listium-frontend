@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import EventItem from "./EventItem";
 import theme from "../styles/theme";
@@ -17,34 +17,34 @@ const StyledH1 = styled(H1)`
   margin-bottom: 32px;
 `;
 
-class EventList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      events: [],
-    };
-  }
-  componentDidMount() {
-    fetch('/api/events')
-      .then(res => res.json())
-      .then(events => this.setState({events}, () => console.log('Events fetched...', events)));
-  }
-  
-  render() {
-    return (
-      <EventListWrapper>
-        <StyledH1>Upcoming Dates</StyledH1>
-        {this.state.events.map((event) => (
-          <EventItem
-            id={event.id}
-            name={event.eventName}
-            category={event.eventCategory}
-            date={event.eventDate}
-          />
-        ))}
-      </EventListWrapper>
-    );
-  }
+const EventList = () => {
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch('api/events');
+      res
+      .json()
+      .then(res => setEvents(res))
+    }
+
+    fetchData();
+  });
+
+  return (
+          <EventListWrapper>
+            <StyledH1>Upcoming Dates</StyledH1>
+            {events.map((event) => (
+              <EventItem
+                id={event.id}
+                name={event.eventName}
+                category={event.eventCategory}
+                date={event.eventDate}
+              />
+            ))}
+          </EventListWrapper>
+        );  
 }
 
 export default EventList;
