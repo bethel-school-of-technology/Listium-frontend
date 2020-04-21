@@ -35,8 +35,9 @@ const EventList = () => {
   return (
           <EventListWrapper>
             <StyledH1>Upcoming Dates</StyledH1>
-            {events.map((event) => (
+            {events.map((event, idx) => (
               <EventItem
+                key={idx}
                 id={event.id}
                 name={event.eventName}
                 category={event.eventCategory}
