@@ -52,6 +52,9 @@ const SpecialIcon = styled(CalendarStar)`
 const TextWrapper = styled.div`
     
 `
+const EventCard = styled(Link)`
+    text-decoration: none;
+`
 
 
 const EventItem = (props) => {
@@ -68,7 +71,7 @@ const EventItem = (props) => {
 
 
     return (
-        <Link to={`/event/${props.id}`} name={props.name} >
+        <EventCard to={`/event/${props.id}`} name={props.name} >
             <EventItemWrapper key={props.id}>
                 <GetCategory category={props.category}/>
                 <TextWrapper>
@@ -77,7 +80,7 @@ const EventItem = (props) => {
                 </TextWrapper>
                 {/* <Link to>Test</Link> */}
             </EventItemWrapper>
-        </Link>
+        </EventCard>
     )
 }
 
