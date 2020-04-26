@@ -65,8 +65,13 @@ const EventItem = (props) => {
         }
     }
 
+    function sayHello() {
+        alert(`hello, ${props.id}`);
+      }
+
+
     return (
-        <div>
+        <div onClick={() => sayHello()}>
 
             <EventItemWrapper key={props.id}>
                 <GetCategory category={props.category}/>
