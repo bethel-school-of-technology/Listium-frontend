@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import Error from './pages/Error';
+import EventView from './pages/EventView';
 import Header from './components/Header';
 
 
@@ -22,6 +23,7 @@ class App extends Component {
              <Route path="/login" component={Login}/>
              <Route path="/signup" component={Signup}/>
              <Route path="/profile" component={Profile}/>
+             <Route path="/event/:id" component={EventView}/>
             {/* <Route component={Error}/> */}
            </Switch>
            <LinesPattern />

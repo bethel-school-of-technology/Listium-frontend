@@ -1,5 +1,4 @@
-import React from "react";
-import EventItem from "../components/EventItem";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 
@@ -15,14 +14,15 @@ const Layout = styled.div`
   position: relative;
 `;
 
-const EventView = () => {
-    return (
-        <MainContainer>
-            <Layout>
-                <EventItem />
-            </Layout>
-        </MainContainer>
-    );
+const EventView = (props) => {
+  console.log(props.location.selectedEvent)
+  return (
+      <MainContainer>
+        <Layout>
+          <h1>{props.location.name}</h1>
+        </Layout>
+      </MainContainer>
+  )
 };
 
 export default EventView;

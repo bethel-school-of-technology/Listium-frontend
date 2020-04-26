@@ -58,6 +58,7 @@ const Header = () => {
             <NavLinkWrapper to="/login">Login</NavLinkWrapper>
             <NavLinkWrapper to="/signup">Signup</NavLinkWrapper>
             <NavLinkWrapper to="/profile">Profile</NavLinkWrapper>
+            <NavLinkWrapper to="/eventview">EventView</NavLinkWrapper>
           </NavLinksContainer>
        </HeaderWrapper>
     );
