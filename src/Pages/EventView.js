@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
+import { H1 } from "../components/Fonts"
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -13,13 +14,16 @@ const Layout = styled.div`
   justify-content: flex-end;
   position: relative;
 `;
+const StyledH1 = styled(H1)`
+  color: white;
+`
 
 const EventView = (props) => {
   console.log(props.location.selectedEvent)
   return (
       <MainContainer>
         <Layout>
-          <h1>{props.location.name}</h1>
+          <StyledH1>Hello</StyledH1>
         </Layout>
       </MainContainer>
   )
