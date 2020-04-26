@@ -17,7 +17,7 @@ const EventItemView = (events) => {
     return (
         <div>
             <h1>{selectedEvent}</h1>
-            <p>Hello World</p>
+            <p>Hello World joe</p>
         </div>
     )
 }
