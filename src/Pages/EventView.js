@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
-import { H1 } from "../components/Fonts"
-
+import { H1 } from "../components/Fonts";
+import EventItem from "../components/EventItem";
 const MainContainer = styled.div`
   min-height: 100vh;
   min-width: 100px;
@@ -19,26 +19,25 @@ const StyledH1 = styled(H1)`
   color: white;
 `;
 const ButtonWrapper = styled.button`
-    height: 56px;
-    width: 240px;
-    background: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 100px;
-    border: 1px solid white;
- ` 
+  height: 56px;
+  width: 240px;
+  background: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px;
+  border: 1px solid white;
+`;
 
 const EventView = (props) => {
-  console.log(props.location.selectedEvent)
+  console.log(props.location.selectedEvent);
   return (
-      <MainContainer>
-        <Layout>
-          <StyledH1>Hello</StyledH1>
-          <ButtonWrapper>Delete Event</ButtonWrapper>
-        </Layout>
-      </MainContainer>
-  )
+    <MainContainer>
+      <Layout>
+        <EventItem></EventItem>
+      </Layout>
+    </MainContainer>
+  );
 };
 
 export default EventView;
