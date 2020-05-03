@@ -23,7 +23,7 @@ const EventList = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('api/events');
+      const res = await fetch('/events');
       res
       .json()
       .then(res => setEvents(res))
@@ -32,20 +32,26 @@ const EventList = () => {
     fetchData();
   });
 
-  return (
-          <EventListWrapper>
-            <StyledH1>Upcoming Dates</StyledH1>
-            {events.map((event, idx) => (
-              <EventItem
-                key={idx}
-                id={event.id}
-                name={event.eventName}
-                category={event.eventCategory}
-                date={event.eventDate}
-              />
-            ))}
-          </EventListWrapper>
-        );  
+  if(events) {
+    return (
+            <EventListWrapper>
+              <StyledH1>Upcoming Dates</StyledH1>
+              {events.map((event, idx) => (
+                <EventItem
+                  key={idx}
+                  id={event.id}
+                  name={event.eventName}
+                  category={event.eventCategory}
+                  date={event.eventDate}
+                />
+              ))}
+            </EventListWrapper>
+          );  
+  } else {
+    return (
+      <p>Add your first event to get started!</p>
+    )
+  }
 }
 
 export default EventList;
