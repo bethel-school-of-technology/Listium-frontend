@@ -30,14 +30,31 @@ const ButtonWrapper = styled.button`
 `;
 
 const EventView = (props) => {
-  console.log(props.location.selectedEvent);
-  return (
-    <MainContainer>
+  const [activeEvent, setActiveEvent] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch('/event/:id');
+      res
+      .json()
+      .then(res => setActiveEvent(res))
+    }
+    fetchData();
+  });
+  console.log({activeEvent})
+return (
+  <MainContainer>
       <Layout>
-        <EventItem></EventItem>
+        <StyledH1>Hello</StyledH1>
+        <ButtonWrapper>Delete Event</ButtonWrapper>
+        <EventItem 
+          id={activeEvent.id}
+          name={activeEvent.eventName}
+          category={activeEvent.eventCategory}
+          date={activeEvent.eventDate}
+        />
       </Layout>
     </MainContainer>
-  );
+)
 };
 
 export default EventView;
