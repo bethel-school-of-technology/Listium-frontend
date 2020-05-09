@@ -3,6 +3,8 @@ import styled from "styled-components";
 import theme from "../styles/theme";
 import { H1 } from "../components/Fonts";
 import EventItem from "../components/EventItem";
+import EventItemView from "../components/EventItemView";
+
 const MainContainer = styled.div`
   min-height: 100vh;
   min-width: 100px;
@@ -19,6 +21,7 @@ const StyledH1 = styled(H1)`
   color: white;
 `;
 const ButtonWrapper = styled.button`
+  display: flex-center;
   height: 56px;
   width: 240px;
   background: none;
@@ -33,28 +36,26 @@ const EventView = (props) => {
   const [activeEvent, setActiveEvent] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('/event/:id');
-      res
-      .json()
-      .then(res => setActiveEvent(res))
+      const res = await fetch("/event/:id");
+      res.json((res) => setActiveEvent(res)).then();
     }
     fetchData();
   });
-  console.log({activeEvent})
-return (
-  <MainContainer>
+  console.log({ activeEvent });
+  return (
+    <MainContainer>
       <Layout>
-        <StyledH1>Hello</StyledH1>
-        <ButtonWrapper>Delete Event</ButtonWrapper>
-        <EventItem 
+        <StyledH1></StyledH1>
+        <EventItem
           id={activeEvent.id}
           name={activeEvent.eventName}
           category={activeEvent.eventCategory}
           date={activeEvent.eventDate}
         />
+        <ButtonWrapper>Delete Event</ButtonWrapper>
       </Layout>
     </MainContainer>
-)
+  );
 };
 
 export default EventView;

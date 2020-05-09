@@ -121,10 +121,10 @@ const NewEvent = () => {
             <SelectWrapper id="date" placeholder="Select Date"/>
             <Label for="category">Select a category</Label>
             <SelectWrapper id="category" placeholder="Select Category" >
-                <SelectOption value="Select a category" disabled="disabled" selected="selected"></SelectOption>
-                <SelectOption value="Birthday"></SelectOption>
-                <SelectOption value="Anniversary"></SelectOption>
-                <SelectOption value="Special Day"></SelectOption>
+                <SelectOption value="Select a category" disabled="disabled" selected="selected">Select a Category</SelectOption>
+                <SelectOption value="Birthday">Birthday</SelectOption>
+                <SelectOption value="Anniversary">Anniversary</SelectOption>
+                <SelectOption value="Special Day">Special Day</SelectOption>
             </SelectWrapper>
             <ButtonWrapper>Create New Event</ButtonWrapper>
         </NewEventContainer>
