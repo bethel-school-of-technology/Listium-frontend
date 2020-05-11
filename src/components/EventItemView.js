@@ -29,22 +29,20 @@ const EventItemView = () => {
     fetchData();
   });
 
-  if (event) {
-    return (
-      <EventListWrapper>
-        <StyledH1>Upcoming Dates</StyledH1>
-        {event.map((event, idx) => (
-          <EventItem
-            key={idx}
-            id={event.id}
-            name={event.eventName}
-            category={event.eventCategory}
-            date={event.eventDate}
-          />
-        ))}
-      </EventListWrapper>
-    );
-  }
+  return (
+    <EventListWrapper>
+      <StyledH1>Upcoming Dates</StyledH1>
+      {event.map((event, idx) => (
+        <EventItem
+          key={idx}
+          id={event.id}
+          name={event.eventName}
+          category={event.eventCategory}
+          date={event.eventDate}
+        />
+      ))}
+    </EventListWrapper>
+  );
 };
 
 export default EventItemView;
