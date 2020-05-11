@@ -10,7 +10,8 @@ import Profile from './pages/Profile';
 import Error from './pages/Error';
 import EventView from './pages/EventView';
 import Header from './components/Header';
-
+import EventItemView from './components/EventItemView';
+import EventItem from './components/EventItem';
 
 class App extends Component {
   render() {
@@ -23,7 +24,7 @@ class App extends Component {
              <Route path="/login" component={Login}/>
              <Route path="/signup" component={Signup}/>
              <Route path="/profile" component={Profile}/>
-             <Route path="/event/:id" component={EventView}/>
+             <Route path="/event/:id"  component={EventView}/>
             {/* <Route component={Error}/> */}
            </Switch>
            <LinesPattern />

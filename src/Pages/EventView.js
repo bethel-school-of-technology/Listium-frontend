@@ -46,11 +46,7 @@ const EventView = (props) => {
     <MainContainer>
       <Layout>
         <StyledH1></StyledH1>
-        <EventItem
-          id={activeEvent.id}
-          name={activeEvent.eventName}
-          category={activeEvent.eventCategory}
-          date={activeEvent.eventDate}
+        <EventItemView
         />
         <ButtonWrapper>Delete Event</ButtonWrapper>
       </Layout>
